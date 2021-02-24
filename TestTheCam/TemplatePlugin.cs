@@ -52,16 +52,6 @@ namespace TestTheCam
             minigame.Begin(null);
         }
 
-        [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
-        public static class ExamplePatch
-        {
-            public static void Postfix(PlayerControl __instance)
-            {
-
-                __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
-            }
-        }
-
         /*[HarmonyPatch]
         public static class KillButtonPatch
         {
